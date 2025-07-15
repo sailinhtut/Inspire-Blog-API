@@ -3,7 +3,7 @@
 A clean, lightweight REST API for blog posts, users, comments, and favorites built with Node.js,
 TypeORM, MySQL, and Docker.
 
----
+
 
 ## 🔧 Features
 
@@ -14,7 +14,6 @@ TypeORM, MySQL, and Docker.
 -    Easy configuration via `.env`
 -    Email notifications via SMTP (optional)
 
----
 
 ## 🚀 Prerequisites
 
@@ -22,7 +21,7 @@ TypeORM, MySQL, and Docker.
 -    Node.js (v18+)
 -    `.env` file with MySQL and SMTP credentials
 
----
+
 
 ## 📅 Installation & Setup
 
@@ -37,7 +36,7 @@ npm run dev
 
 API should now be accessible at `http://localhost:3000`
 
----
+
 
 ## 📚 API Endpoints
 
@@ -51,7 +50,7 @@ API should now be accessible at `http://localhost:3000`
 
 _(Provide request-response examples where applicable)_
 
----
+
 
 ## ⚙️ Configuration (from `.env`)
 
@@ -66,7 +65,7 @@ _(Provide request-response examples where applicable)_
 | `SMTP_USER`     | SMTP login email                    | your email        |
 | `SMTP_PASSWORD` | SMTP password or app-password       | your secret       |
 
----
+
 
 ## 🔪 Running Tests
 
@@ -74,7 +73,7 @@ _(Provide request-response examples where applicable)_
 npm test
 ```
 
----
+
 
 ## 📄 License
 
