@@ -1,66 +1,81 @@
-# Inspire Dream Blog Website
+# Inspire Blog API
 
-Inspire Dream is a blog website which include multiple user blog writing features. It use Next.JS
-fontend and Express.JS backend. The data are stored inside MySQL database and CI/CD is deployed by
-Docker Compose. It efficiently utilize Nginx Web Server to handle multiple incoming requests and
-include auto back up system using Node Crons. The project has been successfully experienced fully
-functional on Cent OS Stream Linux Distro (VPS).
+A clean, lightweight REST API for blog posts, users, comments, and favorites built with Node.js,
+TypeORM, MySQL, and Docker.
 
-The project is built open-source and you are free to collaborate and recreate on it. If you have any
-prospective ideas or something confused, it is always welcome to reach out to me.
+---
 
-To learn and need help to deploy, I am ready to gratefully corporate with you, dear friend. You can easily contact my visiting [sailinhtut.dev](https://sailinhtut.dev).
+## 🔧 Features
 
-> Made with ❤️ by Sai Lin Htut
+-    CRUD operations for posts, users, comments, and favorites
+-    Authentication (e.g. JWT or Sessions)
+-    Fully Dockerized setup (backend + MySQL)
+-    ORM using TypeORM with automatic migrations
+-    Easy configuration via `.env`
+-    Email notifications via SMTP (optional)
 
-## Installation
-**System Requirements**
-- Cent OS Stream 9+
-    - RAM 1GB+, Storage 20GB+
-- Docker & Docker Compose 
-- Nginx Web Server
+---
 
-Step 1: Please build linux server by choosing Cent OS Distro.
+## 🚀 Prerequisites
 
-Step 2: Install `docker` by running these commands.
+-    Docker and Docker Compose
+-    Node.js (v18+)
+-    `.env` file with MySQL and SMTP credentials
+
+---
+
+## 📅 Installation & Setup
+
 ```bash
-sudo dnf remove docker \
-                docker-client \
-                docker-client-latest \
-                docker-common \
-                docker-latest \
-                docker-latest-logrotate \
-                docker-logrotate \
-                docker-engine
-
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager \
-    --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-sudo systemctl start docker
-sudo systemctl enable docker
-
-sudo docker run hello-world
+git clone https://github.com/yourusername/Inspire-Blog-API.git
+cd Inspire-Blog-API
+cp .env.example .env
+docker compose up -d
+npm install
+npm run dev
 ```
 
-Step 3: Install `nginx` web server by running these commands.
+API should now be accessible at `http://localhost:3000`
+
+---
+
+## 📚 API Endpoints
+
+-    `POST /auth/register` – Register a new user
+-    `POST /auth/login` – User login
+-    `GET /posts` – List all posts
+-    `POST /posts` – Create new post
+-    `GET /posts/:id` – Get specific post
+-    `POST /posts/:id/comments` – Add comment
+-    `POST /favorites/:postId` – Mark favorite
+
+_(Provide request-response examples where applicable)_
+
+---
+
+## ⚙️ Configuration (from `.env`)
+
+| Key             | Description                         | Default           |
+| --------------- | ----------------------------------- | ----------------- |
+| `DB_HOST`       | Database host (Docker service name) | `mysql`           |
+| `DB_PORT`       | Database port                       | `3306`            |
+| `DB_NAME`       | Name of database                    | `blog_orm`        |
+| `DB_USERNAME`   | MySQL username                      | `root`            |
+| `DB_PASSWORD`   | MySQL password                      | _(empty)_         |
+| `SMTP_SERVER`   | Email SMTP server                   | `smtp.google.com` |
+| `SMTP_USER`     | SMTP login email                    | your email        |
+| `SMTP_PASSWORD` | SMTP password or app-password       | your secret       |
+
+---
+
+## 🔪 Running Tests
+
 ```bash
-sudo dnf install nginx -y
+npm test
 ```
 
-Step 4: Install `git` application by running these commands.
-```bash
-sudo dnf install git -y
-```
+---
 
-Step 5: Clone `inspire-dream-fontend` and `inspire-dream-backend` in following structures.
-```bash
-root
-   └ repositories
-                 ├ inspire-dream-fontend
-                 └ inspire-dream-backend
-   
-```
+## 📄 License
 
+MIT © Sai Lin Htut
